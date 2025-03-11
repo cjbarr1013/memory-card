@@ -1,5 +1,7 @@
 .card-circle {
   position: relative;
-  height: 550px;
-  width: 550px;
+  max-height: 80%;
+  height: 475px;
+  width: auto;
+  aspect-ratio: 1;
 }

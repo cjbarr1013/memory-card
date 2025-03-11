@@ -4,10 +4,11 @@
   border-radius: 50%;
   position: absolute;
   /* Must be changed together */
-  height: 130px;
-  width: 130px;
-  left: calc(50% - 65px);
-  top: calc(50% - 65px);
+  height: 110px;
+  width: auto;
+  aspect-ratio: 1;
+  left: calc(50% - 55px);
+  top: calc(50% - 55px);
   transition:
     transform 0.5s ease-in-out,
     padding 0.2s ease-in-out,
