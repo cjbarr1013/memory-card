@@ -8,8 +8,9 @@ async function getGiphyData() {
   return await api.getData();
 }
 
-function CardCircle({ handleClick }) {
+function CardCircle({ handleScores }) {
   const allCards = useRef(null);
+  const clickedIds = useRef([]);
   const [activeCards, setActiveCards] = useState([]);
 
   useEffect(() => {
@@ -24,23 +25,34 @@ function CardCircle({ handleClick }) {
     };
   }, []);
 
-  useEffect(() => {
-    const cards = document.querySelectorAll('.card');
-    const radius = document.querySelector('.card-circle').offsetWidth / 2;
+  // useEffect(() => {
+  //   const cards = document.querySelectorAll('.card');
+  //   const radius = document.querySelector('.card-circle').offsetWidth / 2;
 
-    cards.forEach((card, index) => {
-      const angle = (index / 12) * (2 * Math.PI);
-      const x = radius * Math.cos(angle);
-      const y = radius * Math.sin(angle);
-      card.style.transform = `translate(${x}px, ${y}px)`;
-    });
+  //   cards.forEach((card, index) => {
+  //     const angle = (index / 12) * (2 * Math.PI);
+  //     const x = radius * Math.cos(angle);
+  //     const y = radius * Math.sin(angle);
+  //     card.style.transform = `translate(${x}px, ${y}px)`;
+  //   });
 
-    return () => {
-      cards.forEach((card) => {
-        card.style.transform = `translate(0px, 0px)`;
-      });
-    };
-  }, [activeCards]);
+  //   return () => {
+  //     cards.forEach((card) => {
+  //       card.style.transform = `translate(0px, 0px)`;
+  //     });
+  //   };
+  // }, [activeCards]);
+
+  function handleCardClick(id) {
+    if (!clickedIds.current.includes(id)) {
+      clickedIds.current.push(id);
+    } else {
+      clickedIds.current = [];
+    }
+
+    handleScores(clickedIds.current.length);
+    getNewActiveCards();
+  }
 
   function getNewActiveCards() {
     let newCards = [];
@@ -61,13 +73,14 @@ function CardCircle({ handleClick }) {
 
   return (
     <div className="card-circle">
-      {activeCards.map((card) => {
+      {activeCards.map((card, index) => {
         return (
           <Card
             key={card.id}
             image={card.url}
             description={card.desc}
-            handleClick={handleClick}
+            handleClick={() => handleCardClick(card.id)}
+            index={index}
           />
         );
       })}

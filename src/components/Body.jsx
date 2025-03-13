@@ -8,12 +8,17 @@ function Body() {
   const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
 
-  function handleCardClick(e) {}
+  function handleScores(score) {
+    setCurrentScore(score);
+    if (score > highScore) {
+      setHighScore(score);
+    }
+  }
 
   return (
     <main>
       <div className="content-container">
-        <CardCircle handleClick={handleCardClick} />
+        <CardCircle handleScores={handleScores} />
         <Scorecard current={currentScore} high={highScore} />
       </div>
     </main>

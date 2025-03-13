@@ -19,7 +19,10 @@ export default [
         sourceType: 'module',
       },
     },
-    settings: { react: { version: '18.3' } },
+    settings: {
+      react: { version: '18.3' },
+      'import/core-modules': ['styled-jsx/css'],
+    },
     plugins: {
       react,
       'react-hooks': reactHooks,
@@ -35,6 +38,12 @@ export default [
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
+      ],
+      'react/no-unknown-property': [
+        2,
+        {
+          ignore: ['jsx'],
+        },
       ],
       'no-unused-vars': 'warn',
       'no-undef': 'warn',

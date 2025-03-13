@@ -1,6 +1,6 @@
 export function GiphyAPI() {
   const apiKey = 'EdqW378Pk2xazXjEG5EoJj6FGAeEvY7D';
-  const searchTerm = 'dog';
+  const searchTerm = 'nba';
   const limit = '100';
 
   const getUrl = () => {
@@ -11,7 +11,7 @@ export function GiphyAPI() {
       searchTerm +
       '&limit=' +
       limit +
-      '&offset=0&rating=pg&lang=en&bundle=messaging_non_clips'
+      '&offset=0&rating=r&lang=en&bundle=messaging_non_clips'
     );
   };
 
