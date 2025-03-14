@@ -1,5 +1,5 @@
 import Card from './Card.jsx';
-import { GiphyAPI } from '../modules/giphyAPI.js';
+import { GiphyAPI } from '../modules/GiphyAPI.js';
 import '../styles/CardCircle.css';
 import { useState, useEffect, useRef } from 'react';
 
@@ -24,24 +24,6 @@ function CardCircle({ handleScores }) {
       allCards.current = null;
     };
   }, []);
-
-  // useEffect(() => {
-  //   const cards = document.querySelectorAll('.card');
-  //   const radius = document.querySelector('.card-circle').offsetWidth / 2;
-
-  //   cards.forEach((card, index) => {
-  //     const angle = (index / 12) * (2 * Math.PI);
-  //     const x = radius * Math.cos(angle);
-  //     const y = radius * Math.sin(angle);
-  //     card.style.transform = `translate(${x}px, ${y}px)`;
-  //   });
-
-  //   return () => {
-  //     cards.forEach((card) => {
-  //       card.style.transform = `translate(0px, 0px)`;
-  //     });
-  //   };
-  // }, [activeCards]);
 
   function handleCardClick(id) {
     if (!clickedIds.current.includes(id)) {

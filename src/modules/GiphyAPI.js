@@ -1,5 +1,5 @@
 export function GiphyAPI() {
-  const apiKey = 'EdqW378Pk2xazXjEG5EoJj6FGAeEvY7D';
+  const apiKey = 'z55l5KE21b39FarTsmmjimz5jr9QwRwC';
   const searchTerm = 'nba';
   const limit = '100';
 
