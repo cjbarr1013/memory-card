@@ -2,7 +2,8 @@ import '../styles/Card.css';
 
 function Card({ image, description, handleClick, index }) {
   function getCardStyle(index) {
-    const radius = document.querySelector('.card-circle').offsetWidth / 2 - 65;
+    const radius =
+      document.querySelector('.card-circle').offsetWidth / 2 - 57.5;
     const angle = (index / 12) * (2 * Math.PI);
     const x = radius * Math.cos(angle);
     const y = radius * Math.sin(angle);

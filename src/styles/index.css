@@ -1,3 +1,9 @@
+:root {
+  --color-1: #1f7a8c;
+  --color-2: #022b3a;
+  --color-3: #ffffff;
+}
+
 /* Reset */
 *,
 ::before,

@@ -5,10 +5,9 @@
   gap: 2rem;
   position: absolute;
   padding: 3rem;
-  background-color: white;
-  border: 3px solid rgb(206, 202, 202);
+  background-color: var(--color-1);
   border-radius: 50%;
-  box-shadow: 0 0 20px 10px rgb(221, 217, 217);
+  box-shadow: 0 0 30px 10px var(--color-1);
   /* All must be changed together */
   width: 300px;
   height: 300px;
