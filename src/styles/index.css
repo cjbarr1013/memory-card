@@ -117,8 +117,13 @@ html {
 
 h1 {
   font-size: 4rem;
+  font-family: 'Londrina Shadow', Roboto, sans-serif;
+  font-weight: 600;
+  transform: scale(1.2, 1);
+  letter-spacing: 6px;
 }
 
 h2 {
   font-size: 1.5rem;
+  text-decoration: underline;
 }
